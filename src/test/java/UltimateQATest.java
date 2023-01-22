@@ -1,20 +1,21 @@
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.WebElement;
+import org.junit.jupiter.api.Assertions;
 
-public class UltimateQATest {
-    String projectLocation = System.getProperty("user.dir");
-    WebDriver driver;
 
-    //hermetyzacja
+public class UltimateQATest extends BaseTestSetup{
+
+
     @Test
     public void testOne(){
-        System.out.println(projectLocation);
-        System.setProperty("webdriver.chrome.driver", projectLocation + "/resources/chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.get("https://ultimateqa.com/simple-html-elements-for-automation/");
-//        driver.findElement(By.id(""));
-//        driver.close();
+        WebElement buttonUsingId = driver.findElement(By.id("idExample"));
+        Assertions.assertTrue(buttonUsingId.isDisplayed());
+        buttonUsingId.click();
+
+        WebElement textButtonSuccess = driver.findElement(By.className("entry-title"));
+        Assertions.assertEquals("Button success", textButtonSuccess.getText());
     }
+
+
 }
