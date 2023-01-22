@@ -19,9 +19,9 @@ public class BaseTestSetup {
         driver.get("https://ultimateqa.com/simple-html-elements-for-automation/");
     }
 
-    @AfterEach
-    public void tearDown(){
-        //różnica między driver.close()-zamyka tylko kartę. driver.quit() zamyka całą przeglądarkę bez względu na to czy jedna karta czy kilka
-        driver.close();
-    }
+//    @AfterEach
+//    public void tearDown(){
+//        //różnica między driver.close()-zamyka tylko kartę. driver.quit() zamyka całą przeglądarkę bez względu na to czy jedna karta czy kilka
+//        driver.close();
+//    }
 }
