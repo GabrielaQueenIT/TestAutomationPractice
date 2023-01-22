@@ -44,6 +44,7 @@ public class UltimateQATest extends BaseTestSetup{
         Thread.sleep(2000);
 
         WebElement buttonEmailMe = driver.findElement(By.xpath("//button[@class='et_pb_contact_submit et_pb_button']"));
+        //.isSelected()
         Assertions.assertTrue(buttonEmailMe.isDisplayed());
 
         buttonEmailMe.click();
